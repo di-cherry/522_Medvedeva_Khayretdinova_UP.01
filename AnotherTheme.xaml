@@ -1,0 +1,119 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Цвета -->
+    <SolidColorBrush x:Key="PrimaryBackgroundBrush" Color="#F3E8FF"/>
+    <!-- Светлый сиреневый фон -->
+    <SolidColorBrush x:Key="PrimaryForegroundBrush" Color="#4B0082"/>
+    <!-- Темно-фиолетовый текст -->
+    <SolidColorBrush x:Key="AccentForegroundBrush" Color="#7B2FF7"/>
+    <!-- Яркий сиреневый акцент -->
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="#9B59B6"/>
+    <!-- Сиреневый для кнопок -->
+    <SolidColorBrush x:Key="ButtonForegroundBrush" Color="White"/>
+    <SolidColorBrush x:Key="ButtonBorderBrush" Color="#7D3C98"/>
+
+    <!-- Базовые шрифты -->
+    <FontFamily x:Key="AppFontFamily">Segoe UI</FontFamily>
+
+    <!-- Стиль окна -->
+    <Style TargetType="Window" x:Key="WindowStyleKey">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource AppFontFamily}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundBrush}"/>
+    </Style>
+
+    <!-- Стиль DataGrid -->
+    <Style TargetType="DataGrid">
+        <Setter Property="RowBackground" Value="#E9D6FF"/>
+        <Setter Property="AlternatingRowBackground" Value="#F7EBFF"/>
+        <Setter Property="GridLinesVisibility" Value="All"/>
+        <Setter Property="HeadersVisibility" Value="All"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="#7B2FF7"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <!-- Стиль для подсказок -->
+    <Style x:Key="HintTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#888888"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5,0"/>
+        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="IsHitTestVisible" Value="False"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" Value="">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" Value="{x:Null}">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <!-- Стиль для капчи -->
+<Style x:Key="CaptchaTextBoxStyle" TargetType="TextBox">
+    <Setter Property="Width" Value="120"/>
+    <Setter Property="Height" Value="30"/>
+    <Setter Property="Background" Value="{x:Null}"/>
+    <Setter Property="Foreground" Value="{DynamicResource AccentForegroundBrush}"/>
+    <Setter Property="FontStyle" Value="Italic"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="Margin" Value="0,0,10,0"/>
+</Style>
+
+<!-- Стиль текстов -->
+<Style TargetType="TextBlock">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundBrush}"/>
+</Style>
+
+<Style TargetType="TextBlock" x:Key="HeaderText">
+    <Setter Property="FontSize" Value="18"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="Foreground" Value="{DynamicResource AccentForegroundBrush}"/>
+</Style>
+
+<!-- Стиль кнопок -->
+<Style TargetType="Button">
+    <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}"/>
+    <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundBrush}"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="Padding" Value="8,4"/>
+    <Setter Property="Margin" Value="5"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Cursor" Value="Hand"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="Button">
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="4"
+                        Padding="{TemplateBinding Padding}">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#b27dfc"/>
+                        <Setter Property="BorderBrush" Value="#6f42c1"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="Background" Value="#7d3cb8"/>
+                        <Setter Property="BorderBrush" Value="#4a235a"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Background" Value="#d6c9eb"/>
+                        <Setter Property="Foreground" Value="#9a8fc0"/>
+                        <Setter Property="BorderBrush" Value="#9a8fc0"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
+</ResourceDictionary>
