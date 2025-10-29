@@ -27,6 +27,11 @@ namespace _522_Medvedeva
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += (s, e) =>
+            {
+            MainFrame.Visibility = Visibility.Visible;
+            MainFrame.Navigate(new AuthPage());
+            };
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
