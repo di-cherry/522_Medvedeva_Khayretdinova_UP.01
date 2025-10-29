@@ -36,15 +36,6 @@
 
         <Grid Grid.Row="1">
             <Frame x:Name="MainFrame"  NavigationUIVisibility="Hidden" />
-            
-            <StackPanel x:Name="WelcomePanel" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <TextBlock Text="Приветствую вас в приложении!" 
-                           HorizontalAlignment="Center"
-                           Style="{StaticResource HeaderText}"
-                           Margin="0,0,0,15"
-                           />
-                <Button Content="Авторизация" Width="120" Height="40" Click="AuthButton_Click"/>
-            </StackPanel>
         </Grid>
 
         <Grid Grid.Row="2">
