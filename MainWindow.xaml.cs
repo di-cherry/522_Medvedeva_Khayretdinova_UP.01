@@ -47,7 +47,6 @@ namespace _522_Medvedeva
             }
             else
             {
-                WelcomePanel.Visibility = Visibility.Collapsed;
                 MainFrame.Visibility = Visibility.Visible;
 
                 if (currentUserRole == "admin")
@@ -98,15 +97,6 @@ namespace _522_Medvedeva
             {
                 MessageBox.Show($"Не удалось загрузить тему: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-        private void AuthButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Скрываем панель с приветствием и кнопкой
-            WelcomePanel.Visibility = Visibility.Collapsed;
-
-            // Показываем фрейм и навигируем на страницу авторизации
-            MainFrame.Visibility = Visibility.Visible;
-            MainFrame.Navigate(new AuthPage());
         }
     }
 }
