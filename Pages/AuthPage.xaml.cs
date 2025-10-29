@@ -180,7 +180,6 @@ namespace _522_Medvedeva.Pages
                         if (mainWindow != null)
                         {
                             mainWindow.currentUserRole = user.Role;
-                            mainWindow.WelcomePanel.Visibility = Visibility.Collapsed;
                             mainWindow.MainFrame.Visibility = Visibility.Visible;
 
                             if (user.Role == "admin")
