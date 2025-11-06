@@ -62,10 +62,10 @@
                             <Image.Source>
                                 <Binding Path="Photo" UpdateSourceTrigger="PropertyChanged">
                                     <Binding.TargetNullValue>
-                                        <BitmapImage UriSource="C:/Users/Mi/Downloads/images.jpg">
+                                        <BitmapImage UriSource="C:/Users/Mi/Downloads/images.jpg"/>
                                     </Binding.TargetNullValue>
                                     <Binding.FallbackValue>
-                                        <BitmapImage UriSource="C:/Users/Mi/Downloads/images.jpg">
+                                        <BitmapImage UriSource="C:/Users/Mi/Downloads/images.jpg"/>
                                     </Binding.FallbackValue>
                                 </Binding>
                             </Image.Source>
